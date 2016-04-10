@@ -1,0 +1,8 @@
+span(dev-translation-directive='')
+  button.btn.btn-default.navbar-btn(ng-class='{ "btn-success": vm.local._translate }',
+    ng-click='vm.toggleMode()')
+    i.fa.fa-globe
+    | 번역
+
+  button.btn.btn-default.navbar-btn(ui-sref='dev.importTranslation')
+    | 번역 export / import

@@ -1,0 +1,3 @@
+{
+  "/tags/ncc-adgroup": "{{ description }}\n\n{{#if operations }}\n## Opapapap\n[operations:operations]\n{{/if}}"
+}

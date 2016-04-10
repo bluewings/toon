@@ -1,0 +1,42 @@
+{
+  "COMMON": {
+    "MESSAGE": {
+      "INTRO": {
+        "MESSAGE": "",
+        "TITLE": ""
+      }
+    },
+    "TERM": {
+      "CANCEL": "",
+      "COLUMN": {
+        "DESCRIPTION": "",
+        "JSON": "",
+        "OPERATION": "",
+        "PARAMETER_NAME": "",
+        "VALUE": ""
+      },
+      "DATA": "",
+      "DEFINITIONS": "",
+      "EDIT_DESCRIPTION": "",
+      "IMPORT": "",
+      "IMPORT_FILE": "",
+      "LANG": {
+        "EN": "",
+        "KO": ""
+      },
+      "LANGUAGES": "",
+      "MENU": {
+        "DEFINITIONS": "",
+        "HOME": "",
+        "TAGS": ""
+      },
+      "PREVIEW": "",
+      "PROJECT_NAME": "",
+      "RESET": "",
+      "SETTINGS": "",
+      "SHOW_TRANSLATION_ITEMS": "",
+      "SUBMIT": "",
+      "TAGS": ""
+    }
+  }
+}

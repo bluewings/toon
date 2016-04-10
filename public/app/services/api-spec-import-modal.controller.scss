@@ -1,0 +1,24 @@
+.form-control {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+table.table {
+    table-layout: fixed;
+
+    tbody {
+        th, td {
+            border-top: 1px solid #ccc;
+            border-top-color: #ccc;
+            background-color: #f8f8f8;
+            overflow: hidden;
+
+            a {
+                text-decoration: none;
+            }
+
+            &:last-child {
+                text-align: center;
+            }
+        }
+    }
+}

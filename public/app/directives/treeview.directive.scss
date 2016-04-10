@@ -1,0 +1,65 @@
+$color: #555;
+$link-color: #158cba;
+$bg-color: #f8f8f8;
+$indent-size: 15px;
+$bullet-width: 15px;
+$line-height: 24px;
+
+.panel {
+    .panel-heading {
+        background-color: $bg-color;
+
+        .form-group {
+            margin-bottom: 0;
+        }
+    }
+
+    .panel-body {
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: $bg-color;
+
+        .hl {
+            background-color: yellow;
+        }
+    }
+}
+
+a {
+    position: relative;
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+        span {
+            color: $link-color;
+        }
+    }
+
+    i {
+        position: absolute;
+        left: $bullet-width * -1;
+        line-height: $line-height;
+    }
+}
+
+ul {
+    padding-left: $bullet-width;
+
+    li {
+        list-style: none;
+        line-height: $line-height;
+
+        &.active > a {
+            span {
+                color: $link-color;
+                font-weight: bold;
+            }
+        }
+
+        ul {
+            padding-left: $indent-size;
+        }
+    }
+}

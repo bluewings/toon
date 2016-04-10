@@ -1,0 +1,25 @@
+div
+  br
+  br
+  .wrap 
+    .map-wrapper
+    canvas
+  //- .panel.panel-default
+    .panel-body
+
+      input.form-control
+
+      ul
+        li(ng-repeat='definition in vm.definitions')
+          a(href='', ui-sref='api.definition({ definition: definition.name })') {{ definition.name }}
+
+
+      hr
+      ul
+        li(ng-repeat='tag in vm.tags')
+          a(href='', ui-sref='api.tag({ tag: tag.name })') {{ tag.name }}
+          ul
+            li(ng-repeat='operation in tag.operations')
+              //- a(href='', ui-sref='api.operation({ method: operation.method, uri: operation.uri })') {{ operation.operationId }}
+              a(href='', ui-sref='api.operation({ method: operation.method, uri: operation.uri })') {{ operation.method }} {{ operation.uri }}
+              //- json-formatter(json='operation')

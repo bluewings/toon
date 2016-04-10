@@ -1,0 +1,41 @@
+.nmap-wrap {
+    position: relative;
+
+    .nmap-container-wrap {
+        width: 1000px;
+        height: 1000px;
+
+        // height: 600px;
+        overflow: hidden;
+
+        .nmap-container {
+            margin-top: -500px;
+            margin-left: -500px;
+
+            // transform: perspective(800px) rotateX(45deg);
+       
+        }
+    }
+
+    .nmap_base_pane {
+        img {
+            width: 256px;
+            height: 256px;
+
+            // border: 1px solid black !important;
+
+            &.newbie {
+                opacity: 0.3;
+            }
+        }
+    }
+}
+
+canvas {
+    position: absolute;
+    top: -500px;
+    left: -500px;
+    pointer-events: none;
+
+    // display:none;
+}

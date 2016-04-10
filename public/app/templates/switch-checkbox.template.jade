@@ -1,0 +1,12 @@
+span
+  | {{#if hasLabel }}
+  .switch-wrap
+    div(transclude='')
+    div(class='switch-{{ size }}')
+      div
+  | {{else }}
+  label.switch-wrap
+    div(transclude='')
+    div(class='switch-{{ size }}')
+      div
+  | {{/if }}

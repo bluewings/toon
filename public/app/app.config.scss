@@ -1,0 +1,66 @@
+/* main colors */
+$brand-primary: #337ab7;
+$brand-success: #7accbe;
+$brand-info: #8dcadf;
+$brand-warning: #ffc870;
+$brand-danger: #ef6262;
+$brand-accent: #00BCD4;
+
+/*$layout-border-color: #e7e7e7;*/
+$layout-border-color: #c9c9c9;
+
+$grid-gutter-width: 20px;
+
+/* page */
+$page-bg-color: #fff;
+
+/* aside */
+$aside-left-width: 220px;
+
+/* header */
+$header-height: 60px;
+$header-font-size: 14px;
+
+/* footer */
+$footer-height: 0;
+
+/* customer select dropdown */
+$customer-select-box-width: 220px;
+
+/* switch checkbox */
+$switch-checkbox-width: 32px;
+$switch-checkbox-height: 16px;
+$switch-checkbox-on-color: #23B400;
+$switch-checkbox-off-color: #ddd;
+
+/* loading bar */
+$loading-bar-color: #fff;
+$loading-bar-height: 2px;
+
+/* login box */
+/* ... */
+
+/* tree view */
+$treeview-active-color: $brand-primary;
+$treeview-active-text-color: $brand-primary;
+$treeview-text-color:#878787;
+$treeview-item-height: 37px;
+$treeview-indent: 50px;
+$treeview-campaign-off-color: #e0e0e0;
+
+/* date calendar */
+$date-calendar-cell-color: #d9edf7;
+$date-calendar-cell-width: 32px;
+$date-calendar-cell-height: 28px;
+$date-calendar-cell-radius: 2;
+
+/* tooltip */
+$tooltip-width: 300px;
+
+/* region-map */
+$region-map-color: #1dcc83;
+$region-map-unchecked-color: #ccc;
+
+/* widget-table */
+$widget-table-row-hovered-bg-color: #eee;
+$widget-table-row-selected-bg-color: rgb(255, 246, 195);

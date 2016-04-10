@@ -1,0 +1,53 @@
+div(api-definition-table-directive='')
+
+  //- pre {{ vm.definition | json }}
+
+
+  .alert.alert-primary.alert-icon.icon-split(ng-if='vm.isArray')
+    .icon
+      //- i.fa.fa-fw.fa-exclamation-circle
+      i.fa.fa-fw.fa-files-o
+      //- i.fa.fa-fw.fa-list
+    .message 아래 항목이 배열으로 존재합니다.
+
+
+  table.table(ng-if='vm.schema')
+    thead
+      tr
+        th property
+        th description
+        th json
+    tbody
+      tr(ng-repeat='(name, value) in vm.schema.properties')
+        td
+          | {{ name }}
+        td
+          | {{ value.type }}                
+          br
+          | {{ value.format }}
+          a(ng-if='vm.getSchemaRef(value)',
+            ui-sref='api.definition({ definition: vm.getSchemaRef(value) })',
+            ng-bind-html='vm.getSchemaRef(value)')
+          
+        td
+          json-formatter(json='value')
+
+  //- .panel.panel-default
+    .panel-body
+
+      input.form-control
+
+      ul
+        li(ng-repeat='definition in vm.definitions')
+          a(href='', ui-sref='api.definition({ definition: definition.name })') {{ definition.name }}
+
+
+      hr
+      ul
+        li(ng-repeat='tag in vm.tags')
+          a(href='', ui-sref='api.tag({ tag: tag.name })') {{ tag.name }}
+          ul
+            li(ng-repeat='operation in tag.operations')
+              //- a(href='', ui-sref='api.operation({ method: operation.method, uri: operation.uri })') {{ operation.operationId }}
+              a(href='', ui-sref='api.operation({ method: operation.method, uri: operation.uri })') {{ operation.method }} {{ operation.uri }}
+              //- json-formatter(json='operation')

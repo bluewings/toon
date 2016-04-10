@@ -1,0 +1,22 @@
+div(api-parameter-table-directive='')
+
+  table.table.table-striped
+    thead
+      tr
+        th Name
+        th In
+        th Type
+        th Desc
+        th JSON
+    tbody
+      tr(ng-repeat='parameter in vm._parameters')
+        td
+          | {{ parameter.name }}
+        td
+          | {{ parameter.in }}
+        td
+          | {{ parameter.type }}
+        td
+          | {{ parameter.description }}
+        td
+          json-formatter(json='parameter')

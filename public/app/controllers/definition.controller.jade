@@ -1,0 +1,11 @@
+div(api-definition-controller='')
+  h1.title {{ vm.definition.name }}
+
+  div(ng-if='vm.refs.definitions.length + vm.refs.operations.length > 0')
+    p 이 데이터를 참조하고 있는 항목
+    div(ng-repeat='definition in vm.refs.definitions')
+      a(ui-sref='api.definition({ definition: definition })') {{ definition }}
+    div(ng-repeat='operation in vm.refs.operations')
+      a(ng-click='vm.moveToOperation(operation)') {{ operation }}
+
+  scp-markdown-content(markdown-options='vm.markdownOptions')

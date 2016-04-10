@@ -1,0 +1,6 @@
+div
+  div(ng-if='vm.offsetTop', data-offset-top='{{ vm.offsetTop }}', bs-affix='')
+    ul.nav
+      li(ng-repeat='content in vm.contents')
+        span(ng-bind-html='content.padding', style='opacity:0')
+        | {{ content.title }}

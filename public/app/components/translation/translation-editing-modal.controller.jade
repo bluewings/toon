@@ -1,0 +1,20 @@
+div(dev-translation-editing-modal-controller='')
+  .modal-header
+    h4.modal-title {{ vm.translationId }} 번역하기
+
+  .modal-body
+
+    .form-group(ng-repeat='(lang, value) in vm.translation',
+      ng-class='{ current: lang === vm.langKey }')
+      label(for='translation-{{ lang }}') {{ lang }}
+      a(href='', ng-click='vm.translation[lang] = vm._translation[lang]') {{ vm._translation[lang] }}
+      span(ng-if='vm._translation[lang] !== vm.translation[lang]')
+        span &nbsp;→&nbsp;{{ vm.translation[lang] }}
+      textarea.form-control(id='translation-{{ lang }}',
+        msd-elastic='',
+        autocomplete='off', autocorrect='off', autocapitalize='off', spellcheck='false',
+        ng-model='vm.translation[lang]', rows='3')
+
+  .modal-footer
+    button.btn.btn-primary.btn-lg(ng-click='vm.update()') 저장 후 닫기
+    button.btn.btn-default.btn-lg(ng-click='vm.dismiss()') 취소

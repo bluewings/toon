@@ -1,0 +1,10 @@
+﻿{
+  "ENV": "production",
+  "debug": false,
+  "timezone": "Asia/Seoul",
+  "swaggerJson": "http://10.113.217.209:8080/v2/api-docs?group=ncc",
+  "i18n": {
+    "prefix": "assets/i18n/locale-",
+    "suffix": ".json"
+  }
+}

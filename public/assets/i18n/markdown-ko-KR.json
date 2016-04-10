@@ -1,0 +1,4 @@
+{
+  "/definitions/NccCampaignTypeProperty": "{{ description }}\n\n\n\n{{#if schema }}\n\n## Columns\n[parameters:schema]\n\n{{/if}}",
+  "/tags/ncc-adgroup": "{{ description }}\n\n{{#if operations }}\n## Operations\n[operations:operations]\n{{/if}}"
+}

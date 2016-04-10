@@ -1,0 +1,50 @@
+{
+  "name": "james-rhodes",
+  "version": "0.0.0",
+  "authors": [
+    "Albert Cha <darth.vader@navercorp.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "es5-shim": "~4.1.10",
+    "json3": "~3.3.2",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "bootswatch-dist": "lumen",
+    "lodash": "~3.10.1",
+    "angular": "~1.4.3",
+    "angular-animate": "~1.4.3",
+    "angular-bootstrap": "~1.1.0",
+    "angular-cookies": "~1.4.8",
+    "angular-highlightjs": "~0.5.1",
+    "angular-jquery": "~0.2.1",
+    "angular-marked": "~1.0.1",
+    "angular-resource": "~1.4.3",
+    "angular-sanitize": "~1.4.3",
+    "angular-strap": "~2.3.7",
+    "angular-translate": "~2.7.2",
+    "angular-translate-loader-static-files": "~2.7.2",
+    "angular-translate-storage-local": "~2.7.2",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "~3.4.0",
+    "font-awesome": "~4.4.0",
+    "handlebars": "~4.0.5",
+    "highlight-js": "~9.1.0",
+    "html2canvas": "~0.4.1",
+    "json-formatter": "~0.3.1",
+    "moment": "~2.10.5",
+    "pixeden-stroke-7-icon": "~1.2.3",
+    "js-yaml": "~3.5.2"
+  },
+  "resolutions": {
+    "angular": "~1.4.3"
+  }
+}

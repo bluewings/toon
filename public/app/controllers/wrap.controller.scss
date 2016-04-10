@@ -1,0 +1,49 @@
+[ui-view=''] {
+    position: relative;
+
+    /*&.animate-fade-up.ng-enter {
+        animation: 0.5s fade-up-enter;
+    }
+
+    &.ng-enter {
+        animation: 0.5s fade-up-enter;
+    }*/
+
+    h1.title {
+        margin-top: 0;
+    }
+
+    table.table {
+        th {
+            background-color: #757575;
+            color: #fff;
+        }
+
+        td {
+            border-top: 1px solid #ccc;
+            background-color: #f8f8f8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+[role='complementary'] {
+    .panel-body {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/*@keyframes fade-up-enter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}*/

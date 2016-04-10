@@ -1,0 +1,3 @@
+{
+  "/tags/ncc-ad": "{{ description }}\n\n{{#if operations }}\n## Operations\n[operations:operations]\n{{/if}}"
+}

@@ -1,0 +1,43 @@
+div
+  //- when given parameters
+  table.table.table-striped(ng-if='vm.parameters')
+    thead
+      tr
+        th(translate='') COMMON.TERM.COLUMN.PARAMETER_NAME
+        th(translate='') COMMON.TERM.COLUMN.VALUE
+        th(translate='') COMMON.TERM.COLUMN.DESCRIPTION
+        th(translate='') COMMON.TERM.COLUMN.JSON
+    tbody
+      tr(ng-repeat='parameter in vm.parameters')
+        td
+          | {{ parameter.name }}
+        td
+          | {{ parameter.type }}
+        td
+          | {{ parameter.description }}
+        td
+          json-formatter(json='parameter')
+
+  //- when given schema
+  div(ng-if='vm.schema')
+    .alert.alert-info.alert-icon.icon-split(ng-if='vm.isArray')
+      span 아래 항목이 배열으로 존재합니다.
+    table.table
+      thead
+        tr
+          th(translate='') COMMON.TERM.COLUMN.PARAMETER_NAME
+          th(translate='') COMMON.TERM.COLUMN.DESCRIPTION
+          th(translate='') COMMON.TERM.COLUMN.JSON
+      tbody
+        tr(ng-repeat='(name, value) in vm.schema.properties')
+          td
+            | {{ name }}
+          td
+            | {{ value.type }}                
+            br
+            | {{ value.format }}
+            a(ng-if='vm.getSchemaRef(value)',
+              ui-sref='api.definition({ definition: vm.getSchemaRef(value) })',
+              ng-bind-html='vm.getSchemaRef(value)')
+          td
+            json-formatter(json='value')

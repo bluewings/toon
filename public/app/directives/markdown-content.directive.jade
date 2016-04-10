@@ -1,0 +1,62 @@
+div
+  button.btn.btn-default.btn-xs.btn-edit-description(ng-show='!vm.edit.enabled || !vm.local._editDescription',
+    ng-click='vm.edit.enable()')
+    i.fa.fa-fw.fa-code
+    //- span(translate='') COMMON.TERM.EDIT  
+  //- .readme-content(ng-if='!vm.edit.enabled || !vm.local._editDescription', marked='vm.data.content')
+
+  .markdown-content(ng-show='!vm.edit.enabled || !vm.local._editDescription', view-transclude='')
+  .edit-area(ng-show='vm.edit.enabled && vm.local._editDescription')
+    //- h1 tabs
+    uib-tabset
+      uib-tab
+        uib-tab-heading
+          i.fa.fa-fw.fa-code
+          span(translate='') COMMON.TERM.EDIT_DESCRIPTION
+        .panel.panel-default
+          .panel-heading
+            .pull-right
+              button.btn.btn-default(ng-click='vm.reset()',
+                translate='') COMMON.TERM.RESET
+              .btn-group
+                button.btn.btn-default(ng-repeat='language in vm.languages',
+                  ng-click='vm.changeLanguage(language.langTag)',
+                  ng-class='{ "btn-info": vm.app.langTag === language.langTag }',
+                  ng-bind-html='language.translationId | translate')
+            button.btn.btn-primary(ng-click='vm.update()',
+              translate='') COMMON.TERM.SUBMIT
+            button.btn.btn-default(ng-click='vm.edit.disable()',
+              translate='') COMMON.TERM.CANCEL
+            .clearfix
+          .panel-body
+            textarea.form-control(ng-model='vm.editData.content',
+              ng-model-options='{ debounce: 500 }',
+              data-input-composition='',
+              textarea-decorator='',
+              autocomplete='off', autocorrect='off', autocapitalize='off' spellcheck='false')
+
+      uib-tab(select='vm.renderPreview()')
+        uib-tab-heading
+          i.fa.fa-fw.fa-eye
+          span(translate='') COMMON.TERM.PREVIEW
+        .panel.panel-default
+          .panel-heading
+            button.btn.btn-primary(ng-click='vm.update()',
+              translate='') COMMON.TERM.SUBMIT
+            button.btn.btn-default(ng-click='vm.edit.disable()',
+              translate='') COMMON.TERM.CANCEL
+          .panel-body
+            .markdown-content(preview-transclude='')
+
+      uib-tab
+        uib-tab-heading
+          i.fa.fa-fw.fa-file-o
+          span(translate='') COMMON.TERM.DATA
+        .panel.panel-default.panel-data
+          .panel-heading
+            button.btn.btn-primary(ng-click='vm.update()',
+              translate='') COMMON.TERM.SUBMIT
+            button.btn.btn-default(ng-click='vm.edit.disable()',
+              translate='') COMMON.TERM.CANCEL
+          .panel-body
+            json-formatter(json='vm._markdownOptions.context', open='1')

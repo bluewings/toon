@@ -1,0 +1,26 @@
+div
+  .panel.panel-default(ng-if='vm.offsetTop', data-offset-top='{{ vm.offsetTop }}', bs-affix='')
+    .panel-heading
+      .form-group
+        .input-search
+          input.form-control(type='text', ng-model='vm.query',
+            data-input-composition='',
+            autocomplete='off', autocorrect='off', autocapitalize='off' spellcheck='false')
+    .panel-body
+      ul(ng-if='vm._type === "definition"')
+        li(ng-repeat='definition in vm.definitions | scpTreeviewFilter : vm.patterns',
+          ng-class='{ active: definition.name === vm.selected.definition }')
+          a(href='', ui-sref='api.definition({ definition: definition.name })')
+            span(ng-bind-html='definition.name | scpTreeviewDisplayFilter : vm.patterns')
+      ul(ng-if='vm._type !== "definition"')
+        li(ng-repeat='tag in vm.tags',
+          ng-class='{ active: tag.name === vm.selected.tag }')
+          a(href='', ui-sref='api.tag({ tag: tag.name })')
+            i.fa.fa-caret-down(ng-click='vm.toggleTag(tag, $event)',
+              ng-class='{ "fa-rotate-270": !vm.opened.tagMap[tag.name] || vm.patterns }')
+            span(ng-bind-html='tag.name | scpTreeviewDisplayFilter : vm.patterns')
+          ul(ng-if='vm.opened.tagMap[tag.name] || vm.patterns')
+            li(ng-repeat='operation in tag.operations | scpTreeviewFilter : vm.patterns',
+              ng-class='{ active: operation.method === vm.selected.method && operation.uri === vm.selected.uri }')
+              a(href='', ui-sref='api.operation({ method: operation.method, uri: operation.uri })')
+                span(ng-bind-html='( operation.method + " " + operation.uri ) | hideQueries | scpTreeviewDisplayFilter : vm.patterns')

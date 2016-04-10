@@ -1,0 +1,248 @@
+$color-base-danger: #ed2b46;
+$color-base-warning: #ffbb2a;
+$color-base-primary: #4daefe;
+$color-base-success: #36e438;
+$stroke-text-color: #f2ffda;
+
+h1 {
+    color: black;
+    -webkit-text-fill-color: white;
+
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000,   1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.btn {
+    color: black;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
+
+    // font-weight:bold;
+
+    text-shadow: 0px 3px 0 rgba(0, 0, 0, 0.7);
+    text-transform: none;
+}
+
+.bttn {
+    position: relative;
+
+    // color: $stroke-text-color;
+    // color: black;
+    -webkit-text-fill-color: $stroke-text-color;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 0px 2px 0 rgba(0, 0, 0, 0.7);
+    background-color: $color-base-danger;
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    user-select: none;
+    border:1px solid rgba(0,0,0,.3);
+
+    // border:3px solid black;
+    overflow: hidden;
+    margin: 10px;
+
+    &.bttn-danger {
+        // -webkit-text-fill-color: $stroke-text-color;
+        background-color: $color-base-danger;
+        box-shadow: 0 1px 0 darken($color-base-danger, 20%),
+            0 6px 0 darken($color-base-danger, 20%),
+            0 8px 4px 1px rgba(0,0,0,.5);
+
+        span {
+            box-shadow: inset 0 0 0 3px darken($color-base-danger, 10%);
+        }
+    }
+
+
+    // border-bottom-width:10px;
+    &.bttn-warning {
+        // -webkit-text-fill-color: $stroke-text-color;
+        background-color: $color-base-warning;
+        box-shadow: 0 1px 0 darken($color-base-warning, 20%),
+            0 6px 0 darken($color-base-warning, 20%),
+            0 8px 4px 1px rgba(0,0,0,.5);
+
+        span {
+            box-shadow: inset 0 0 0 3px darken($color-base-warning, 10%);
+        }
+    }
+
+    &.bttn-primary {
+        // -webkit-text-fill-color: $stroke-text-color;
+        background-color: $color-base-primary;
+        box-shadow: 0 1px 0 darken($color-base-primary, 20%),
+            0 6px 0 darken($color-base-primary, 20%),
+            0 8px 4px 1px rgba(0,0,0,.5);
+        span {
+            box-shadow: inset 0 0 0 3px darken($color-base-primary, 10%);
+        }
+    }
+
+    &.bttn-success {
+        // -webkit-text-fill-color: $stroke-text-color;
+        background-color: $color-base-success;
+        box-shadow: 0 1px 0 darken($color-base-success, 20%),
+            0 6px 0 darken($color-base-success, 20%),
+            0 8px 4px 1px rgba(0,0,0,.5);
+        span {
+            box-shadow: inset 0 0 0 3px darken($color-base-success, 10%);
+        }
+    }
+
+    // box-shadow: inset 0 0 3px 3px black;
+
+    span {
+        // box-shadow: inset 0 0 3px 3px $color-base-danger;
+        box-shadow: inset 0 0 0 3px darken($color-base-danger, 10%);
+        position: relative;
+        display: block;
+        z-index: 1;
+        font-size: 18px;
+        border-radius: 6px;
+        padding: 15px 20px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgba(255, 255, 255, 0.25);
+        border-radius: 1px 1px 5px 5px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 6px;
+        top: 5px;
+        right: 5px;
+
+        // background-image: -webkit-gradient(linear, 0% 0, 100% 0, from(rgba(255, 255, 255, 0.54902)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.8, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.498039)));
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10% 50%;
+    }
+}
+
+.punch {
+    position: relative;
+    background: #4162a8;
+    border-top: 1px solid #38538c;
+    border-right: 1px solid #1f2d4d;
+    border-bottom: 1px solid #151e33;
+    border-left: 1px solid #1f2d4d;
+    border-radius: 4px;
+    border-radius: 10px;
+
+    // box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 0 3px 3px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+
+    /* box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111; */
+    color: #fff;
+
+    // font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    text-shadow: 0 -1px 1px #1e2d4d;
+    width: 150px;
+    -webkit-background-clip: padding-box;
+    -webkit-text-fill-color: #fff;
+
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    text-shadow: 0px 1px 0 #000;
+    text-transform: none;
+}
+
+.punch-orange {
+    position: relative;
+    background: #4162a8;
+    border-top: 1px solid #e19f04;
+    border-right: 1px solid #e19f04;
+    border-bottom: 1px solid #e19f04;
+    border-left: 1px solid #e19f04;
+    border-radius: 4px;
+    border-radius: 10px;
+
+    // box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 0 3px 3px #edad16, 0 1px 0 #ae690e, 0 6px 0 #ae690e, 0 8px 4px 1px #111111;
+
+    /* box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 6px 0 #1f3053, 0 8px 4px 1px #111111; */
+    color: #fff;
+
+    // font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+    margin-bottom: 10px;
+    padding: 10px 0 10px 0;
+    padding: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 -1px 1px #1e2d4d;
+    width: 150px;
+    -webkit-background-clip: padding-box;
+    -webkit-text-fill-color: #fff;
+
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    text-shadow: 0px 1px 0 #000;
+    text-transform: none;
+    background: linear-gradient(to bottom, #FFD054 0%, #FFD054 50%, #FFBB2A 50%, #FFBB2A 59%, #FFBB2A 100%);
+    font-size: 24px/1em;
+}
+
+.glass::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 5px;
+    right: 5px;
+
+    // background-image: -webkit-gradient(linear, 0% 0, 100% 0, from(rgba(255, 255, 255, 0.54902)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.8, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.498039)));
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10% 50%;
+
+    // content: "";
+    // position: absolute;
+    // width: 90%;
+    // height: 50%;
+    // top: 0px;
+    // left: 5%;
+    // background-image: -webkit-gradient(linear, 0% 0, 100% 0, from(rgba(255, 255, 255, 0.54902)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.8, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.498039)));
+    // border-radius: 0.5em 0.5em 1em 2em 1em 2em;
+    // border-radius: 5px 5px 10px 10px;
+}
+
+.btn-special {
+    // color:#F2FAC9 !important;
+
+    -webkit-text-fill-color: #F2FAC9;
+
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3b0527;
+
+    // background-color:#FFBB2A;
+    font-size: 26px;
+    text-shadow: 0px 2px 0 #3b0527;
+    text-transform: none;
+    border: 5px solid #FB8E04;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    // background: linear-gradient(0deg, #FFD054, #FFD054 50%,#FABD2A);
+    // background: linear-gradient(top, #fff, #fff 50%,#FABD2A);
+    padding: 10px;
+    text-align: center;
+    background: linear-gradient(to bottom, #FFD054 0%, #FFD054 50%, #FFBB2A 50%, #FFBB2A 59%, #FFBB2A 100%);
+}

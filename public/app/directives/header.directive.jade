@@ -1,0 +1,74 @@
+div(ng-style='vm.headerStyle')
+  header(data-offset-top='-1', bs-affix='')
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='', ui-sref='api.main', translate='') COMMON.TERM.PROJECT_NAME
+
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li(ng-repeat='menu in vm.menus',
+              ng-class='{ active: menu === vm.current }')
+              a(href='', ui-sref='{{ menu.sref }}', ng-bind-html='menu.translationId | translate') 
+
+          ul.nav.navbar-nav.navbar-right.collapse.navbar-collapse
+            li.dropdown
+              a.dropdown-toggle.icon-wrap(href='', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                i.pe-7s-config
+              ul.dropdown-menu
+                li.dropdown-header(translate='') COMMON.TERM.LANGUAGES
+                li(ng-repeat='language in vm.translate.languages')
+                  a(href='', ng-click='vm.translate.changeLanguage(language.langTag)')
+                    span(ng-bind-html='language.translationId | translate')
+                    .pull-right(ng-if='language.langTag === vm.app.langTag')
+                      i.fa.fa-check
+                li.divider(role='separator')
+                li.dropdown-header(translate='') COMMON.TERM.SETTINGS
+                li
+                  a(href='', ng-click='vm.local._editDescription = vm.local._editDescription ? 0 : 1')
+                    span(translate='') COMMON.TERM.EDIT_DESCRIPTION
+                    .pull-right(ng-if='vm.local._editDescription')
+                      i.fa.fa-check
+                    .clearfix
+                li
+                  a(href='', ng-click='vm.local._translate = vm.local._translate ? 0 : 1')
+                    span(translate='') COMMON.TERM.SHOW_TRANSLATION_ITEMS
+                    .pull-right(ng-if='vm.local._translate')
+                      i.fa.fa-check
+                    .clearfix
+                li.divider(role='separator')
+                li
+                  a(href='', ng-click='vm.openImportModal()')
+                    span(translate='') COMMON.TERM.IMPORT_FILE
+                //- li
+                //-   div
+                //-     span(translate='') COMMON.TERM.EDIT_DESCRIPTION
+                //-     .pull-right
+                //-       span(ng-click='$event.stopPropagation()')
+                //-         input(type='checkbox',
+                //-           ng-true-value='1',
+                //-           ng-false-value='0',
+                //-           ng-model='vm.local._editDescription',
+                //-           scp-switch-checkbox='')
+                //-   .clearfix
+                //- li
+                //-   div
+                //-     span(translate='') COMMON.TERM.SHOW_TRANSLATION_ITEMS
+                //-     .pull-right
+                //-       span(ng-click='$event.stopPropagation()')
+                //-         input(type='checkbox',
+                //-           ng-true-value='1',
+                //-           ng-false-value='0',
+                //-           ng-model='vm.local._translate',
+                //-           scp-switch-checkbox='')
+                //-   .clearfix
+
+          form.navbar-form.navbar-right.collapse.navbar-collapse(role='search')
+            //- .form-group
+            input.form-control(type='text')
+            //- button.btn.btn-default(type='submit') Submit
